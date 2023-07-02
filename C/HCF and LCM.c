@@ -1,24 +1,23 @@
 #include <stdio.h>
+
+int hcf(int num1, int num2);
+
 int main() {
-  int a, b, x, y, t, hcf, lcm;
+    int num1, num2, result;
+    printf("Enter the first number: ");
+    scanf("%d", &num1);
+    printf("Enter the second number: ");
+    scanf("%d", &num2);
+    result = hcf(num1, num2);
+    printf("HCF of %d and %d is %d\n", num1, num2, result);
+    printf("LCM of %d and %d is %d\n", num1, num2, num1*num2/result);
+    return 0;
+}
 
-  printf("Enter two integers\n");
-  scanf("%d%d", &x, &y);
-
-  a = x;
-  b = y;
-
-  while (b != 0) {
-    t = b;
-    b = a % b;
-    a = t;
-  }
-
-  hcf = a;
-  lcm = (x*y)/hcf;
-
-  printf("HCF of %d and %d = %d\n", x, y, hcf);
-  printf("LCM of %d and %d = %d\n", x, y, lcm);
-
-  return 0;
+int hcf(int num1, int num2) {
+    if (num2 != 0) {
+        return hcf(num2, num1 % num2);
+    } else {
+        return num1;
+    }
 }
