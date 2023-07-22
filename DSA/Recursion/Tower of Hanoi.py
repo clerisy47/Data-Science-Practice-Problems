@@ -1,13 +1,13 @@
-def towerOfhanoi(n , source, auxiliary, destination):
-    if n==1:
-        print ("Move disk 1 from source",source,"to destination",destination)
+def tower_of_hanoi(n, source, auxiliary, target):
+    if n == 1:
+        print("Move disk 1 from source", source, "to target", target)
         return
-    towerOfhanoi(n-1, source,destination, auxiliary)
-    print ("Move disk",n,"from source",source,"to destination",destination)
-    towerOfhanoi(n-1, auxiliary, source, destination)
+    tower_of_hanoi(n-1, source, target, auxiliary)
+    print("Move disk", n, "from source", source, "to target", target)
+    tower_of_hanoi(n-1, auxiliary, source, target)
          
 n = 4
-towerOfhanoi(n,'A','B','C')
+tower_of_hanoi(n,'A','B','C')
 
 # Time Complexity: O(2^n)
 # Space Complexity: O(n)
