@@ -31,13 +31,12 @@ int main() {
 }
 
 int binary_decimal(long long n) {
-    int dec = 0, i = 0, rem;
+    int dec = 0, i, rem;
 
-    while (n != 0) {
+    for(i=0; n!=0; i++) {
         rem = n % 10;
         n /= 10;
         dec += rem * pow(2, i);
-        ++i;
     }
 
     return dec;
@@ -45,9 +44,9 @@ int binary_decimal(long long n) {
 
 long long decimal_binary(int n) {
     long long bin = 0;
-    int rem, i = 1;
+    int rem, i;
 
-    while (n != 0) {
+    for(i=0; n!=0; i++) {
         rem = n % 2;
         n /= 2;
         bin += rem * pow(10,i);
