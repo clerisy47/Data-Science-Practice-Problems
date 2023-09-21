@@ -1,3 +1,10 @@
+// 1 2 3 4 5 4 3 2 1 
+//   1 2 3 4 3 2 1 
+//     1 2 3 2 1 
+//       1 2 1 
+//         1 
+
+
 #include<stdio.h>
 int main(){
     int i, j, space;
@@ -6,10 +13,10 @@ int main(){
             printf("  ");
         }
         for(j=1; j<=5-i+1; j++){
-            printf("%d ", j);
+            printf("%2d", j);
         }
         for(j=5-i; j>=1; j--){
-            printf("%d ", j);
+            printf("%2d", j);
         }
         printf("\n");
     }

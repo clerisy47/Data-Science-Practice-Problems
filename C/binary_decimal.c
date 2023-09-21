@@ -35,8 +35,8 @@ int binary_decimal(long long n) {
 
     for(i=0; n!=0; i++) {
         rem = n % 10;
-        n /= 10;
         dec += rem * pow(2, i);
+        n /= 10;
     }
 
     return dec;
@@ -48,8 +48,8 @@ long long decimal_binary(int n) {
 
     for(i=0; n!=0; i++) {
         rem = n % 2;
-        n /= 2;
         bin += rem * pow(10,i);
+        n /= 2;
 
     }
 

@@ -1,12 +1,14 @@
+// Implementation of strlen, strcat, strcpy and strcmp functions
+
 #include <stdio.h>
 
-int my_strlen(const char str[]) {
+int my_strlen(char str[]) {
     int i;
     for(i=0; str[i]!='\0';i++);
     return i;
 }
 
-void my_strcat(char dest[], const char src[]) {
+void my_strcat(char dest[], char src[]) {
     int i, j;
     for(i=0; dest[i]!='\0';i++);
     for(j=0; src[j]!='\0';j++){
@@ -15,7 +17,7 @@ void my_strcat(char dest[], const char src[]) {
     dest[i+j] = '\0';
 }
 
-void my_strcpy(char dest[], const char src[]) {
+void my_strcpy(char dest[], char src[]) {
     int i;
     for(i=0; src[i]!='\0';i++){
         dest[i]=src[i];

@@ -1,3 +1,5 @@
+// Sort student data on the order of their name
+
 #include <stdio.h>
 #include <string.h>
 

@@ -21,7 +21,7 @@ int main() {
         }
         
         for (int j = i; j >= 0; j--) {
-            printf("%c ", word[j]);
+            printf("%2c", word[j]);
         }
 
         printf("\n");

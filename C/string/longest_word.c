@@ -1,3 +1,5 @@
+// Longest word in a sentence
+
 #include <stdio.h>
 #include <string.h>
 
@@ -29,6 +31,7 @@ int main()
         }
     }
 
+    // For the last word we need to check again
     if (count > max)
     {
         max = count;

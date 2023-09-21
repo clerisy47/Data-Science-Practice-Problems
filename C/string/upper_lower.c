@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void convertCase(char *str) {
-    while (*str) { // *str is same as str[]
+    while (*str) { // *str is same as str[] we can do it with for loop like in operations.c
         if (*str >= 'A' && *str <= 'Z') {
             *str = *str + ('a' - 'A');
         } else if (*str >= 'a' && *str <= 'z') {
@@ -18,15 +18,7 @@ int main() {
 
     printf("Enter a string: ");
     
-    while (1) {
-        ch = getchar();
-        if (ch == '\n' || ch == EOF) {
-            inputString[i] = '\0';
-            break;
-        }
-        inputString[i] = ch;
-        i++;
-    }
+    scanf("%s", inputString);
 
     convertCase(inputString);
 

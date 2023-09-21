@@ -11,12 +11,14 @@ struct TIME {
 struct TIME calculateSum(struct TIME t1, struct TIME t2) {
     struct TIME sum;
     
-    sum.seconds = t1.seconds + t2.seconds;
-    sum.minutes = t1.minutes + t2.minutes + (sum.seconds / 60);
-    sum.hour = t1.hour + t2.hour + (sum.minutes / 60);
-    
-    sum.seconds %= 60;
-    sum.minutes %= 60;
+    int seconds1 = t1.hour * 3600 + t1.minutes * 60 + t1.seconds;
+    int seconds2 = t2.hour * 3600 + t2.minutes * 60 + t2.seconds;
+    int sumSeconds = seconds1 + seconds2;
+
+    sum.hour = sumSeconds / 3600;
+    sumSeconds %= 3600;
+    sum.minutes = sumSeconds / 60;
+    sum.seconds = sumSeconds % 60;
     
     return sum;
 }

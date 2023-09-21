@@ -31,11 +31,11 @@ int sumDiagonals(int matrix[][3], int size) {
 }
 
 // Function to multiply two matrices
-void multiplyMatrices(int matrix1[][3], int matrix2[][3], int result[][3], int rows, int cols) {
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
+void multiplyMatrices(int matrix1[][3], int matrix2[][3], int result[][3], int rows1, int cols1, int cols2) {
+    for (int i = 0; i < rows1; i++) {
+        for (int j = 0; j < cols2; j++) {
             result[i][j] = 0;
-            for (int k = 0; k < cols; k++) {
+            for (int k = 0; k < cols1; k++) {
                 result[i][j] += matrix1[i][k] * matrix2[k][j];
             }
         }
@@ -52,8 +52,10 @@ void transposeMatrix(int matrix[][3], int rows, int cols, int result[][3]) {
 }
 
 int main() {
-    int rows = 3;
-    int cols = 3;
+    int rows1 = 3;
+    int cols1 = 3;
+    int rows2 = 3;
+    int cols2 = 3;
 
     int matrix1[3][3];
     int matrix2[3][3];
@@ -62,24 +64,24 @@ int main() {
 
 
     // Input elements into matrices
-    inputMatrix(matrix1, rows, cols);
-    inputMatrix(matrix2, rows, cols);
+    inputMatrix(matrix1, rows1, cols1);
+    inputMatrix(matrix2, rows2, cols2);
 
     // Display input matrices
-    displayMatrix(matrix1, rows, cols, "Matrix 1");
-    displayMatrix(matrix2, rows, cols, "Matrix 2");
+    displayMatrix(matrix1, rows1, cols1, "Matrix 1");
+    displayMatrix(matrix2, rows2, cols2, "Matrix 2");
 
     // Square matrix for diagonal sum
-    int diagonalSum = sumDiagonals(matrix1, rows);
+    int diagonalSum = sumDiagonals(matrix1, rows1);
     printf("Sum of Diagonals: %d\n\n", diagonalSum);
 
     // Multiplying matrices
-    multiplyMatrices(matrix1, matrix2, multiplyResult, rows, cols);
-    displayMatrix(multiplyResult, rows, cols, "Matrix Multiplication Result");
+    multiplyMatrices(matrix1, matrix2, multiplyResult, rows1, cols1, cols2);
+    displayMatrix(multiplyResult, rows1, cols2, "Matrix Multiplication Result");
 
      // Transposing a matrix
-    transposeMatrix(matrix1, rows, cols, transposeResult);
-    displayMatrix(transposeResult, cols, rows, "Transpose of Matrix 1");
+    transposeMatrix(matrix1, rows1, cols1, transposeResult);
+    displayMatrix(transposeResult, cols1, rows1, "Transpose of Matrix 1");
 
     return 0;
 }
