@@ -12,7 +12,7 @@
 #include <string.h>
 
 int main() {
-    char word[] = "kwohclup"; // reverse of pulchowk
+    char word[] = "kwohclup"; 
     int length = strlen(word); 
 
     for (int i = 0; i < length; i++) {

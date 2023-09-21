@@ -1,30 +1,22 @@
+// Triangular numbers from n1 to n2
+
 #include <stdio.h>
 
 int sum(int n) {
-    int sum = 0, i;
-
-    for(i=0; i<n; i++){
-        sum+=i;
-    }
-    return sum;
+    return n*(n+1)/2;
 }
 
 int main() {
-    int num, i, flag=0;
+    int n1, n2, i, j;
 
-    printf("Enter a number: ");
-    scanf("%d", &num);
-    for(i=0; i<=num; i++){
-        if (num == sum(i)){
-            flag =1;
+    printf("Enter a number n1 and n2: ");
+    scanf("%d %d", &n1, &n2);
+    for(i=n1; i<=n2; i++){
+        for(j=0; j<=i; j++){
+            if (i == sum(j)){
+                printf("%d ", i);
+            }
         }
     }
-
-    if (flag==1) {
-        printf("%d is a triangular number.\n", num);
-    } else {
-        printf("%d is not a triangular number.\n", num);
-    }
-
     return 0;
 }

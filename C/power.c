@@ -1,13 +1,13 @@
 #include<stdio.h>
 float power(int x, int y){
-    if (y == 1){
-        return x;
+    if (y == 0){
+        return 1;
     }
-    else if ( y >1){
+    else if ( y >0){
         return x*power(x, y-1);
     }
     else{
-        return 1/x*power(x,y+1);
+        return 1.0/x*power(x,y+1);
     }
 }
 int main() {
