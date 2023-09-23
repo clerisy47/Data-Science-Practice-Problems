@@ -1,3 +1,5 @@
+// Pallindrome are the numbers whose reverse is same as the original number
+
 #include <stdio.h>
 
 int isPalindrome(int num) {

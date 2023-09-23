@@ -1,5 +1,5 @@
-                //       k
-                //      o k
+                //        k
+                //       o k
                 //      w o k
                 //     h w o k
                 //    c h w o k
@@ -9,23 +9,22 @@
 
 
 #include <stdio.h>
-#include <string.h>
+#include<string.h>
 
 int main() {
-    char word[] = "kwohclup"; 
-    int length = strlen(word); 
-
-    for (int i = 0; i < length; i++) {
-        for (int space = 0; space < length - i - 1; space++) {
-            printf(" ");
+    char word[] = "pulchowk"; 
+    int length;
+    for(length=0; word[length]!='\0';length++);
+    // length = strlen(word);
+    for(int i=1; i<=8; i++){
+        for(int space=7; space>=i;space--){
+            putchar(' ');
         }
-        
-        for (int j = i; j >= 0; j--) {
-            printf("%2c", word[j]);
+        for(int j=9-i; j<=8; j++){
+            putchar(word[j-1]);
+            putchar(' ');
         }
-
-        printf("\n");
+        putchar('\n');
     }
-
     return 0;
 }

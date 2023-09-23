@@ -1,3 +1,5 @@
+// Stores data of employees and displays deatils of manager
+
 #include <stdio.h>
 #include <string.h>
 
@@ -26,7 +28,7 @@ int main() {
         scanf("%s", employees[i].post);
     }
 
-    fwrite(employees, sizeof(struct Employee), 10, file);
+    fwrite(employees, sizeof(employees[0]), 10, file);
     fclose(file);
 
     file = fopen("employee.dat", "rb");
@@ -36,7 +38,7 @@ int main() {
     }
 
     printf("\nEmployees with the post of 'manager':\n");
-    fread(employees, sizeof(struct Employee), 10, file);
+    fread(employees, sizeof(employees[0]), 10, file);
     for (int i = 0; i < 10; i++) {
         if (strcmp(employees[i].post, "manager") == 0) {
             printf("Name: %s\n", employees[i].name);

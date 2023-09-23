@@ -1,4 +1,7 @@
+// Twin primes are pairs of prime numbers that have a difference of 2
+
 #include <stdio.h>
+#include<stdlib.h>
 
 int isPrime(int num) {
     int i;
@@ -19,9 +22,7 @@ int main() {
     printf("Enter two numbers: ");
     scanf("%d %d", &num1, &num2);
     
-    // Twin primes are pairs of prime numbers that have a difference of 2
-    
-    if (is_prime(num1) && is_prime(num2) && abs(num1 - num2) == 2) {
+    if (isPrime(num1) && isPrime(num2) && abs(num1 - num2) == 2) {
         printf("%d and %d are twin primes.\n", num1, num2); 
     } else {
         printf("%d and %d are not twin primes.\n", num1, num2);

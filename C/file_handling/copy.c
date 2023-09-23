@@ -1,3 +1,5 @@
+// Copies data from one file to another
+
 #include <stdio.h>
 
 int main() {

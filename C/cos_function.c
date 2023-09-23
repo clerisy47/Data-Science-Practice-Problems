@@ -1,3 +1,5 @@
+// Cos Function approximation using Taylor Series
+
 #include<stdio.h>
 float power(float x, float y){
     if (y == 0){

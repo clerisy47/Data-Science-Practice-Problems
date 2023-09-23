@@ -1,4 +1,5 @@
 // Triangular numbers from n1 to n2
+// Triangular numbers are the numbers which can be represented by summation of natural numbers
 
 #include <stdio.h>
 

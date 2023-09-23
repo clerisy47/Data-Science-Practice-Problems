@@ -4,7 +4,8 @@
 
 int my_strlen(char str[]) {
     int i;
-    for(i=0; str[i]!='\0';i++);
+    for(i=0; str[i]!='\0';i++); // Or simply for(i=0; str[i]; i++);
+    // As loop increments value at the end even after false condtion, it will always end at length of string
     return i;
 }
 

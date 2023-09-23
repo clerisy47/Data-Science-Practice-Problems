@@ -16,7 +16,7 @@ int main()
 
     for (i = 0; i < length; i++)
     {
-        if (string[i] != ' ' && string[i] != '\n')
+        if (string[i] != ' ')
         {
             count++;
         }
