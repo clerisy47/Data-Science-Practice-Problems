@@ -3,8 +3,10 @@ def power(base, exponent):
     assert exponent >=0 and int(exponent) == exponent, "The number should be a whole number"
     if exponent == 0:
         return 1
-    else:
+    else if exponent>0:
         return base * power(base, exponent-1)
+    else:
+        return 1/base * power(base, -exponent+1)
 # Time Complexity : O(n)
 # Space Complexity: O(n)
 
