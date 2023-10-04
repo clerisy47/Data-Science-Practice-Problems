@@ -1,7 +1,5 @@
 # Recursion
-def HCF(number_1, number_2):
-    x = max(number_1, number_2)
-    y = min(number_1, number_2)
+def HCF_recusion(x, y):
     if y == 0:
         return x
     else:
@@ -11,15 +9,9 @@ def HCF(number_1, number_2):
 
 
 # Iteration
-def HCF(number_1, number_2):
-    
-    x = max(number_1, number_2)
-    y = min(number_1, number_2)
-
+def HCF(x, y):
     while y != 0:
-        temp = y
-        y = x % y
-        x = temp
+        x, y = y, x%y
     return x
 # Time Complexity : O(log n) where n = smaller number
 # # Space Complexity: O(1)
@@ -28,4 +20,4 @@ def HCF(number_1, number_2):
 def LCM(number_1, number_2):
     return number_1*number_2//HCF(number_1, number_2)
 # Time Complexity : O(log n) where n = smaller number
-# # Space Complexity: O(n)
+# # Space Complexity: O(1)

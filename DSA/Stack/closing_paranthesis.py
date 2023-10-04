@@ -1,23 +1,4 @@
-class Stack:
-    def __init__(self, stack=[]) -> None:
-        self.stack = stack
-
-    def is_empty(self):
-        if len(self.stack)==0:
-            return True
-        return False
-    
-    def length(self):
-        return len(self.stack)
-    
-    def push(self, item):
-        self.stack.append(item)
-
-    def pop(self):
-        if self.is_empty():
-            print("Cannot pop as stack is empty")
-        else:
-            self.stack.pop()
+from implementation_array import Stack
 
 open = ['(','{','[']
 close = [')','}',']']
