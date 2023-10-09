@@ -1,20 +1,25 @@
-from implementation_array import Stack
+from collections import deque
 
-open = ['(','{','[']
-close = [')','}',']']
+open_brackets = ['(','{','[']
+close_brackets = [')','}',']']
 def check(text):
-    s = Stack()
-    for i in text:
-        if i in open:
-            s.push(i)
-        elif i in close:
-            if i not in open and close.index(i)==s.length()-1:
-                s.pop()
+    stack = deque()
+    for letter in text:
+        if letter in open_brackets:
+            stack.append(letter)
+        elif letter in close_brackets:
+            position = close_brackets.index(letter)
+            if stack and open_brackets[position]==stack[-1]:
+                stack.pop()
             else:
                 return 'Imbalanced'
-    if s.is_empty():
+    if len(stack) == 0:
         return "Balanced"
     return 'Imbalanced'
     
-text = input("Enter your text.")
-print(check(text))
+if __name__ == "__main__":
+    print(check("({a+b})"),     
+    check("))((a+b}{"),  
+    check("((a+b))"),    
+    check("))"),
+    check("[a+b]*(x+2y)*{gg+kk}"))
